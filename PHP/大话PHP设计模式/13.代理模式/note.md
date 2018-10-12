@@ -66,7 +66,7 @@ $textShop->printSth();
 $photoShop->printSth();
 ```
 
-文印处理店和照相店都具有文印的功能,所以我们可以将文印的功能代理给一台打印机,这里打印机只有一个功能,假如打印机还有n个功能,我们使用__call()方法就能够省去很多重复的代码了
+文印处理店和照相店都具有文印的功能,所以我们可以将文印的功能代理给一台打印机,这里打印机只有一个功能,假如打印机还有n个功能,我们使用`__call()`方法就能够省去很多重复的代码了
 
 假如是使用继承,这样语境上就不合理,一个店显然不应该继承一台打印机
 
@@ -74,4 +74,49 @@ $photoShop->printSth();
 
 所以此处使用代理是最佳选择
 
-Java中的代理模式实现其实类似,只不过Java没有__call()方法,还需要手动声明printSth()方法,然后在方法体里去调用$printer的printSth()方法,此处就不再赘述了
+Java中的代理模式实现其实类似,只不过Java没有__call()方法,需要手动声明printSth()方法,然后在方法体里去调用$printer的printSth()方法
+或者可以用`InvocationHandler`代理接口来实现代理，
+```java
+public interface InvocationHandler { 
+   public Object invoke(Object proxy, Method method, Object[] args) throw Throwable; 
+}
+
+//日志代理实现   
+public class LogHandler implement InvocationHandler{ 
+
+   private Object target; 
+
+   public LogHandler(Object target){ 
+       this.target = target; 
+   } 
+   public Object invoke(Object proxy, Method method, Object[] args ) throw Throwable{ 
+
+       //记录函数的初始状况参数等信息 
+       log4j.info(“开始:方法”+ method.getName() + “参数”+Arrays.toString(args) );
+
+       Object result = method.invoke(target, args); 
+
+       //记录函数的执行状况与返回值 
+       log4j.info(“结束:方法”+ method.getName() + “返回值”+ result ); 
+
+   }
+}
+
+//主函数   
+public class Main{ 
+   public static void main(String[ ] args){ 
+	   //例子中生成报告的功能，生成报告需要记录日志。
+       ReportGenerator reportGeneratorImpl  = new SMSReportGenerator (); 
+
+       //通过系统提供的Proxy.newProxyInstance创建动态代理实例 
+       ReportGenerator reportGenerator = (ReportGenerator ) Proxy.newProxyInstance(  
+           reportGeneratorImpl.getClass().getClassLoader(), 
+           reportGeneratorImpl.getClass().getInterfaces(), 
+           new LogHandler(reportGeneratorImpl)
+       ) ; 
+       ...
+   }
+}
+```
+
+但是 Java Reflection API 实现的动态代理结构十分复杂，不易理解，此处就不再赘述了
