@@ -1,7 +1,7 @@
 ## 什么是Material Design图标
 `MD`大家都听过的吧，就是谷歌的Material Design设计，Material Design图标就是符合
 MD设计语言的图标。
-本文通过字体的方法在网页中显示Material Design图标。
+本文通过字体的方式在网页中显示Material Design图标。
 
 ## What are material icons
 >Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
