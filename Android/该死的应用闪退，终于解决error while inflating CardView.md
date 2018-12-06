@@ -1,8 +1,8 @@
 ## 前言
 （先来一个微笑脸）这个问题已经困扰我好久了，之前各种搜索无果，得到的解决方案无非就是 `AppCompact` 和 `CardView` 包的版本不一样云云，然而我根本没有这个问题。（怕是不把我Gradle看在眼里？）
 
-
 ## 问题
+
 ![](https://upload-images.jianshu.io/upload_images/8869373-198a79198c023179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 就是这么个界面，用到了RecycleView和Cardview，但是在SDK 23以下都不行，官方已经写明这个组件是支持到SDK9还是10的，反正基本是个android手机就可以，然而，它就是不行，在SDK24以上都没问题，我自己用的手机都没问题，就是在模拟器上和几个旧版本的测试机，都闪退了。
 我真的想掐死这个Cardview。。
