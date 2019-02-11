@@ -1,4 +1,6 @@
 ## 需要两个文件
+>说明：这两个文件放在哪里都是ok，但是要记住路径，待会配置的时候需要输入。
+>建议放在和`settings.py`同个目录下面。
 
 创建`backends.py`文件：
 ```python
@@ -102,7 +104,10 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
-        'OPTIONS': {'context_processors': CONTEXT_PROCESSORS, },
+        'OPTIONS': {
+            'context_processors': CONTEXT_PROCESSORS,
+            'environment': '存放路径.env.environment'
+        },
     },
 ]
 ```

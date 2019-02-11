@@ -2,15 +2,28 @@
 不清楚什么原因，网络上关于JavaFx的中文资料很少，并且都很老，所以建议大家有兴趣学习JavaFx还是看官方文档比较好，而且貌似部分人不看好JavaFx。
 关于Swing的资料倒是要多很多。我觉得挺奇怪的，从设计上来将，还是JavaFx高明一些嘛。
 
-## 开始
+>PS：经过近一周的折腾和探索，发现OpenJDK使用JavaFX真的好多坑～
+>OpenJDK 和 Oracle JDK的配置是有差别的，这里推荐大家使用OracleJDK以免遇到奇怪的坑～
+
+## 附上安装OracleJDK的方法
+```bash
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
+```
+
+
+## OpenJDK需要多一步操作
+因为OpenJDK8默认是没有javafx包的，需要先安装 OpenJFX。
+
+## 配置
 打开Idea，在一个普通的Java项目里面，导入javafx包是找不到的。
-好像是Idea 在创建Java项目的时候默认不导入JavaFx包，所以需要我们自己找到路劲并且导入。
+Idea 在创建Java项目的时候默认不导入JavaFx包，所以需要我们自己找到路劲并且导入。
 
 打开 Project Structure，选择SDKs，可以看到JDK路径。
 ![](https://upload-images.jianshu.io/upload_images/8869373-bf50c3eff30ba41b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 点击旁边的 “+” 号，然后在 jdk 目录下，`/lib/ext`文件夹里找到 `jfxrt.jar` 这个包，并且导入，就OK啦～
-
 
 ## HelloWorld
 第一个程序从HelloWorld开始！
