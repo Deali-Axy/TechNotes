@@ -60,6 +60,7 @@ sudo apt update
 
 哇好多软件要升级的，那先`sudo apt upgrade`升级一下吧。
 升级完成之后，来开始安装Gimp。
+
 ```bash
 sudo apt install gimp
 ```
@@ -117,9 +118,3 @@ sudo apt install leafpad
 由于篇幅关系，就只是介绍这两个软件咯，其他软件都大同小异，有兴趣的同学可以自己去安装试一下。
 不过我觉得Linux这些软件放到Windows上运行看起来都挺丑的，还是在Linux桌面环境里面，换一套好看的GTK主题好看一些吧，在子系统里运行Linux图形程序确实挺好玩的，虽然就仅限于好玩，实际作用嘛= =。没想出来有啥= =。
 
-
-## About
-![](https://upload-images.jianshu.io/upload_images/8869373-901590e019f6f85b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
----------------
-了解更多有趣的操作请关注我的微信公众号：DealiAxy
-每一篇文章都在我的博客有收录：[blog.deali.cn](http://blog.deali.cn)

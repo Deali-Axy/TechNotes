@@ -3,11 +3,8 @@
 
 ```python
 try:
-
 　　...
-
 except Exception, e:
-
 　　...
 ```
 
@@ -30,44 +27,7 @@ except Exception, e:
 
 ### 4、采用traceback模块
 
-　　需要导入traceback模块，此时获取的信息最全，与python命令行运行程序出现错误信息一致。使用traceback.print_exc()打印异常信息到标准错误，就像没有获取一样，或者使用traceback.format_exc()将同样的输出获取为字符串。你可以向这些函数传递各种各样的参数来限制输出，或者重新打印到像文件类型的对象。
-
-## 示例如下
-```python
-import traceback
-
-print '########################################################'
-print "1/0 Exception Info"
-print '---------------------------------------------------------'
-try:
-    1/0
-except Exception, e:
-    print 'str(Exception):\t', str(Exception)
-    print 'str(e):\t\t', str(e)
-    print 'repr(e):\t', repr(e)
-    print 'e.message:\t', e.message
-    print 'traceback.print_exc():'; traceback.print_exc()
-    print 'traceback.format_exc():\n%s' % traceback.format_exc()
-print '########################################################'
-print '\n########################################################'  
-print "i = int('a') Exception Info"
-print '---------------------------------------------------------'
-try:
-    i = int('a')
-except Exception, e:
-    print 'str(Exception):\t', str(Exception)
-    print 'str(e):\t\t', str(e)
-    print 'repr(e):\t', repr(e)
-    print 'e.message:\t', e.message
-    print 'traceback.print_exc():'; traceback.print_exc()
-    print 'traceback.format_exc():\n%s' % traceback.format_exc()
-print '########################################################'
-```
-
-## 运行结果
-![image.png](https://upload-images.jianshu.io/upload_images/8869373-e253708e182d0ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![image.png](https://upload-images.jianshu.io/upload_images/8869373-1409405b7a1cfdf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+需要导入traceback模块，此时获取的信息最全，与python命令行运行程序出现错误信息一致。使用 `traceback.print_exc()` 打印异常信息到标准错误，就像没有获取一样，或者使用 `traceback.format_exc()` 将同样的输出获取为字符串。你可以向这些函数传递各种各样的参数来限制输出，或者重新打印到像文件类型的对象。
 
 
 ## 参考资料

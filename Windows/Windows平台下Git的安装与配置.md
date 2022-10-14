@@ -100,9 +100,3 @@ ssh-keygen -C "your email address" -t rsa
 3. 输入ssh git@github.com 回车，出现如下提示表示已经信任[git@github.com](mailto:git@github.com)站点。
 ![image](http://upload-images.jianshu.io/upload_images/8869373-98febc2dd1310063.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-## About
-![](https://upload-images.jianshu.io/upload_images/8869373-901590e019f6f85b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
----------------
-了解更多有趣的操作请关注我的微信公众号：DealiAxy
-每一篇文章都在我的博客有收录：[blog.deali.cn](http://blog.deali.cn)
